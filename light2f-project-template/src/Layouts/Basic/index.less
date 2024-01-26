@@ -1,0 +1,72 @@
+.basic-layout {
+    height: 100vh;
+    .basic-sider {
+        &-logo {
+            height: 32px;
+            margin: 16px;
+            color: #f0f0f0;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-align: center;
+            text-overflow :ellipsis;
+            white-space :nowrap;
+            overflow : hidden;
+        }
+        height: 100vh;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    } 
+    .basic-tags {
+        background-color: white;
+        margin: 2px 0;
+        height: 32px;
+        display: flex;
+        div {
+            display: grid;
+            gap: center;
+        }
+    }
+    .basic-center {
+        .basic-header {
+            background: #fff;
+            display: flex;
+            box-shadow: 0px 2px 6px #f0f1f2;
+            padding-right: 12px;
+            padding-left: 16px;
+            z-index:  1000;
+            &-center { 
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            &-collapsed {
+                font-size: 18px;
+                line-height: 64px;
+                cursor: pointer;
+                transition: color 0.3s;
+                &:hover {
+                    color: #1890ff;
+                }
+            }
+        }
+        &-content {
+            overflow-y: auto;
+            height: calc(100% - 65px);
+            &-bread {
+                margin: 12px 0px 0px 12px;
+            }
+            &-page {
+                display: flex;
+                flex-direction: column;
+                min-height: calc(100vh - 172px);
+                padding: 12px;
+                padding-bottom: 12px; 
+            }
+        }
+    }
+}
