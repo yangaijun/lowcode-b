@@ -1,0 +1,3 @@
+function(params) {
+    $set('searchData', params.row)
+}

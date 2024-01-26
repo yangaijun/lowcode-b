@@ -1,0 +1,38 @@
+.video-doc-left ul li {
+    list-style: none;
+    padding: 6px 0;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.video-doc-activity {
+    background-color: aliceblue;
+    color: #1890ff;
+    font-weight: bold;
+    border-right: 3px solid #1890ff;
+}
+
+.video-doc-left {
+    width: 280px;
+    height: 100%;
+    border-right: 2px solid #f5f5f5;
+    position: fixed;
+    overflow-y: hidden;
+    padding-bottom: 65px;
+    &:hover {
+        overflow-y: auto;
+    }
+    .title {
+        font-weight: 600;
+        font-size: 18px; 
+        padding-top: 12px;
+    }
+}
+
+.video-doc-center {
+    flex: 1;
+    padding-bottom: 65px;
+    padding-left: calc(225px + 12%);
+    padding-right: 12%;
+} 

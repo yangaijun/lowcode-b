@@ -1,0 +1,85 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.yaj.common.config.properties.BaseProperties",
+      "name": "base",
+      "type": "com.yaj.common.config.properties.BaseProperties"
+    },
+    {
+      "sourceType": "com.yaj.common.config.properties.BeetlProperties",
+      "name": "beetl",
+      "type": "com.yaj.common.config.properties.BeetlProperties"
+    },
+    {
+      "sourceType": "com.yaj.common.jwt.properties.JwtProperties",
+      "name": "jwt",
+      "type": "com.yaj.common.jwt.properties.JwtProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.yaj.common.config.properties.BaseProperties",
+      "name": "base.no-auth-path",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.yaj.common.config.properties.BaseProperties",
+      "name": "base.test",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yaj.common.config.properties.BeetlProperties",
+      "name": "beetl.delimiter-statement-end",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yaj.common.config.properties.BeetlProperties",
+      "name": "beetl.delimiter-statement-start",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yaj.common.config.properties.BeetlProperties",
+      "name": "beetl.properties",
+      "type": "java.util.Properties"
+    },
+    {
+      "sourceType": "com.yaj.common.config.properties.BeetlProperties",
+      "name": "beetl.resource-auto-check",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yaj.common.config.properties.BeetlProperties",
+      "name": "beetl.resource-tagroot",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yaj.common.config.properties.BeetlProperties",
+      "name": "beetl.resource-tagsuffix",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yaj.common.jwt.properties.JwtProperties",
+      "name": "jwt.expiration",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.yaj.common.jwt.properties.JwtProperties",
+      "defaultValue": "Authorization",
+      "name": "jwt.header",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yaj.common.jwt.properties.JwtProperties",
+      "defaultValue": "randomKey",
+      "name": "jwt.md5-key",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yaj.common.jwt.properties.JwtProperties",
+      "defaultValue": "defaultSecret",
+      "name": "jwt.secret",
+      "type": "java.lang.String"
+    }
+  ]
+}

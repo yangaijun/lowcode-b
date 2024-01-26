@@ -1,0 +1,22 @@
+.api-body {
+    width: 272px; 
+    &::-webkit-scrollbar{
+        width: 0px; 
+    } 
+    .api-title { 
+        font-size: 14px;
+        display: flex;
+    }
+    .api-line {
+        margin: 7px 0 8px 0;
+    }
+    .api-list {
+        white-space:nowrap;
+        overflow-x: auto;
+        overflow-y: auto;
+        height: calc(100vh - 128px);
+        &::-webkit-scrollbar{
+            width: 2px; 
+        } 
+    }
+}

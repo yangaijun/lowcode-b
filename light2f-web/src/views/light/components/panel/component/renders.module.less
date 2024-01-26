@@ -1,0 +1,28 @@
+.renderCode {
+    position: relative;
+
+    .expend {
+        display: none;
+        position: absolute;
+        right: 3px;
+        top: 1px;
+        font-size: 20px;
+        color: white;
+        z-index: 1000;
+    }
+
+    &:hover {
+        .expend {
+            display: block;
+        }
+    }
+
+    .disabled {
+        position: absolute;
+        background-color: rgba(0, 0, 0, .5);
+        left: 1px;
+        top: 1px;
+        bottom: 1px;
+        right: 1px;
+    }
+}

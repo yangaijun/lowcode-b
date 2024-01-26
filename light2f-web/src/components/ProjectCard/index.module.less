@@ -1,0 +1,107 @@
+@import 'styles/vars.less';
+
+.main {
+    border-radius: 6px;
+    box-shadow: 0 2px 5px 2px @border;
+    flex: 0 0 calc(25% - 10px);
+    padding: 20px 2%;
+    height: 320px;
+    margin: 0 5px 12px 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    word-break: break-all;
+
+    .cover {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        display: flex;
+        position: absolute;
+        transition: all .3s;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, .4);
+
+        .item {
+            display: flex;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            align-items: center;
+            justify-content: center;
+            margin-top: -28px;
+            background-color: rgba(0, 0, 0, .5);
+            cursor: pointer;
+
+            svg {
+                font-size: 18px;
+                color: white;
+            }
+
+            &:hover {
+                opacity: .8;
+
+                svg {
+                    transition: color .4s;
+
+                    &:hover {
+                        color: @primary;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .name {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .pageCounts {
+        margin-top: 5px;
+    }
+
+    .desWraper {
+        flex: 1;
+        margin-top: 14px;
+        .des {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 7;
+            word-break: break-word;
+        }
+    }
+
+    .pid {
+        margin-top: 6px;
+        font-size: 16px;
+    }
+
+    .bottom {
+        display: flex;
+        color: @secondary;
+
+        .date {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .avatar {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+    }
+}

@@ -1,0 +1,4 @@
+function(data) {
+    $close('dialog')
+    $api.${serviceName}(data).then(_ => loadData())
+}

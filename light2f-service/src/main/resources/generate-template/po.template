@@ -1,0 +1,67 @@
+package com.yaj.${moduleName}.business.${packageName}.entity.po;
+
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableLogic;
+
+<%
+	var deleteFlagPrint = true;
+    var importArray = [];
+    for(column in columnList){
+    	if(column.columnName=='if_delete' && deleteFlagPrint){
+            println("import com.baomidou.mybatisplus.annotations.TableLogic;");
+            deleteFlagPrint=false;
+        }
+        if(array.contain(importArray,column.fieldType)){
+                continue;
+        }
+        if(strutil.endWith(column.fieldType,"Integer")){
+            println("import java.math.BigDecimal;");
+        }else if(strutil.endWith(column.fieldType,"Date")){
+            println("import java.util.Date;");
+        }
+        array.add(importArray,column.fieldType);
+        //@importArray.add(column.fieldType);
+    }
+%>
+
+<% var date = date(); %>
+/*
+ * @Description: ${tableComment}
+ * @date: ${ date , dateFormat="yyyy-MM-dd"}
+ */
+@TableName(value = "${tableName}")
+public class ${entityPrefix}PO {
+    <%
+        var onePriFlag=true;
+        for(column in columnList){
+           println('    /*');
+           var comments = strutil.split(column.columnComment,'\n');
+           for(var i=0;i<comments.~size;i++){
+             println('    *'+comments[i]);
+           }
+           println('    */');
+           if(column.columnKey=='PRI' && onePriFlag && column.dataType=='int'){
+                println('    @TableId' );
+                onePriFlag=false;
+           }
+           if(column.columnName=='is_deleted'){
+                println('    @TableLogic' );
+           }
+           print('    private ' );
+           print(column.fieldType+' ');
+           println(column.columnNameWithCamelCase+';');
+       }
+       println();
+       for(column in columnList){
+            println('    public void set'+strutil.toUpperCase(strutil.subStringTo(column.columnNameWithCamelCase,0,1))+strutil.subString(column.columnNameWithCamelCase,1)+'('+column.fieldType+' '+column.columnNameWithCamelCase+') {' );
+            println('        this.'+column.columnNameWithCamelCase+' = '+column.columnNameWithCamelCase+';');
+            println('    }');
+            println();
+            println('    public '+column.fieldType+' get'+strutil.toUpperCase(strutil.subStringTo(column.columnNameWithCamelCase,0,1))+strutil.subString(column.columnNameWithCamelCase,1)+'() {' );
+            println('        return this.'+column.columnNameWithCamelCase+';');
+            println('    }');
+            println();
+       }
+    %>
+}

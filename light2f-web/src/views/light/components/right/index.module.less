@@ -1,0 +1,41 @@
+.right-body {
+    width: 280px;
+    padding: 0 10px;
+
+    .right-body-panel {
+        height: calc(100vh - 72px);
+        overflow: auto;
+        overflow-x: hidden;
+
+        svg {
+            margin-left: 2px;
+            color: #555;
+
+            &:hover {
+                color: rgb(64, 169, 255);
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        .ant-form-item {
+            margin-bottom: 8px;
+        }
+    }
+
+}
+
+.design-config {
+    label {
+        color: #666;
+        font-weight: 12;
+    }
+}
+
+.page-class-tip {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2px;
+} 

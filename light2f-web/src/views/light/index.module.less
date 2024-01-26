@@ -1,0 +1,55 @@
+.main {
+    display: flex;
+    height: 100%;
+
+    .left {
+        .header {
+            height: 46px;
+            border-bottom: 1px solid #eee;
+            padding-left: 3px;
+            display: flex;
+            align-items: center;
+
+            .logo {
+                &:hover {
+                    cursor: pointer;
+                    opacity: .8;
+                }
+
+                img {
+                    margin-top: 3px;
+                    margin-left: 5px;
+                    height: 40px;
+                }
+            }
+
+            .page {
+                justify-content: flex-end;
+                width: 100%;
+                padding-right: 12px;
+                display: flex;
+
+                .grey {
+                    color: #aaa;
+                }
+
+            }
+        }
+
+        .panel {
+            display: flex;
+            width: 309px;
+            border-right: 1px solid #f5f5f5;
+            height: calc(100vh - 46px);
+        }
+    }
+}
+
+
+:global {
+    .drag-dialog {
+        .ant-modal-header {
+            cursor: move;
+        }
+    }
+}

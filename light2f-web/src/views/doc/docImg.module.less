@@ -1,0 +1,23 @@
+@import 'styles/vars.less';
+
+.imgBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    .itemImg {
+        max-width: 800px;
+        margin-bottom: 12px;
+        
+    }
+    .des {
+        color: #363636;
+    }
+}
+
+:global {
+    .ant-image-preview-img {
+        border: 4px solid @primary;
+    }
+}

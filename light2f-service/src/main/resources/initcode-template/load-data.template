@@ -1,0 +1,6 @@
+function() {
+    $api.${serviceName}(searchData).then(res => {
+        $set('tableData', res.data)
+        $set('pagination', { total: res.total })
+    })
+}

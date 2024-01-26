@@ -1,0 +1,7 @@
+variables:
+  PROJECT: "freedomen-doc-server"
+  TEST_SERVERS: "TEST"
+
+include:
+  - project: 'devops/gitlab-shared-ci'
+    file: '/shell-runner/be.yml'

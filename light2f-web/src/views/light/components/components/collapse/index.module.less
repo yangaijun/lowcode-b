@@ -1,0 +1,38 @@
+@import 'styles/vars.less';
+
+.item {
+    .title {
+        display: flex;
+        font-size: 14px;
+        font-weight: 500; 
+        padding-bottom: 8px;
+        border-bottom: 1px solid #efefef;
+
+        .right {
+            flex: 1;
+            text-align: right;
+            padding-right: 12px;
+            transition: color 1s;
+
+            &:hover {
+                cursor: pointer;
+                color: @primary;
+            }
+        }
+    } 
+    .titleMore0 {
+        padding-top: 12px;
+    }
+    .title0Open {
+        border-top: 1px solid #efefef;
+    }
+    .list {
+        overflow-y: auto;
+        max-height: calc(100vh - 188px);
+
+        &::-webkit-scrollbar {
+            width: 2px;
+        }
+
+    }
+}

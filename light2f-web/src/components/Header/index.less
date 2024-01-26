@@ -1,0 +1,61 @@
+.gheader {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 68px;
+    background-color: white;
+    min-width: 1290px;
+    z-index: 1000;
+    display: flex;
+    position: fixed;
+    box-shadow: 1px 1px 3px #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+
+    .gheader-left {
+        width: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+            height: 48px;
+            width: 100px;
+            margin-top: -2px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .gheader-menu {
+        flex: 1;
+        margin-top: 2px;
+
+        ul {
+            border-bottom: none;
+        }
+
+        li {
+            line-height: 66px;
+            text-align: center;
+        }
+    }
+
+    .gheader-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 25px;
+        font-size: 16px;
+        .user-avatar {
+            height: 18px;
+            width: 18px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 4px;
+            border: 1px solid #ccc;
+        }
+    }
+}

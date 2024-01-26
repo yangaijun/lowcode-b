@@ -1,0 +1,60 @@
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<style>
+body {
+	text-align: left
+}
+
+.div {
+	margin: 0 auto;
+	width: 400px;
+	height: 100px;
+}
+/* css注释：为了观察效果设置宽度 边框 高度等样式 */
+</style>
+<body onload="init()">
+	<div id="app">
+		<div class="div">
+			<form name="submitForm" method="post" action="index">
+				模块名:<input id="moduleName" name="moduleName" type="text" value=""><br>
+				<!--输出路径:<input id="target" name="target" type="text" value=""><br>-->
+				<div style="margin-bottom:15px;margin-top:15px;">
+					<input type="button"  onclick="selectAll()" value="全选"> 
+					<input type="button" value="提交" onclick="doSubmit()"><br>
+				</div>
+				@for( var tableName in tableNames){ 
+				@	println("<input type='checkbox' name='table' value='"+tableName+"' >"+tableName+"<br>");
+				@}
+		</div>
+	</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+	function init() {
+		var moduleName = typeof (localStorage.moduleName) == 'undefined' ? ''
+				: localStorage.moduleName;
+
+		document.getElementById("moduleName").value = moduleName;
+	}
+
+	function selectAll() {
+		var checkboxs = document.getElementsByName("table");
+		for (var i = 0; i < checkboxs.length; i++) {
+			var e = checkboxs[i];
+			e.checked = !e.checked;
+		}
+	}
+
+	function doSubmit() {
+		var moduleName = document.getElementById("moduleName").value;
+		if(moduleName==null||moduleName==''){
+			alert('模块名不能为空!')
+			return false;
+		}
+
+		localStorage.moduleName = moduleName;
+		document.submitForm.submit();
+	}
+</script>

@@ -1,0 +1,13 @@
+package com.yaj.${moduleName}.business.${packageName}.mapper;
+
+import com.yaj.common.mybatisplus.SuperMapper;
+import com.yaj.${moduleName}.business.${packageName}.entity.po.${entityPrefix}PO;
+
+<% var date = date(); %>
+/*
+ * @Description: ${tableComment}
+ * @date: ${ date , dateFormat="yyyy-MM-dd"}
+ */
+public interface ${entityPrefix}Mapper extends SuperMapper<${entityPrefix}PO> {
+
+}

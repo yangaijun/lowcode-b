@@ -1,0 +1,21 @@
+package com.yaj.${moduleName}.business.${packageName}.entity.${type};
+
+<% var date = date(); %>
+/*
+ * @Description: ${constant.classComment}
+ * @date: ${ date , dateFormat="yyyy-MM-dd"}
+ */
+public interface ${constant.className} {
+    <%
+        for(item in constant.items){
+            if(item.error==null){
+                println('    /*');
+                println('     *'+item.describe);
+                println('     */');
+                println('    public static final int '+item.key+' = '+item.value+';');
+            }else{
+                println('!!!'+item.error+'!!!');
+            }
+        }
+    %>
+}

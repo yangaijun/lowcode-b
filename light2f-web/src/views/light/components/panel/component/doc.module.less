@@ -1,0 +1,35 @@
+@import 'styles/vars.less';
+
+.codeJs {
+    position: relative;
+
+    .use {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+}
+
+.listToDoc { 
+    max-height: calc(100vh - 400px);
+    overflow-y: auto;
+
+    &Item {
+        .doctitle {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+        .line {
+            margin: 6px 0 8px 0;
+        }
+        .rem {
+            color: @secondary;
+            line-height: 22px;
+            margin-bottom: 8px;
+        } 
+        .code {
+            margin-bottom: 22px;
+        }
+    }
+
+}

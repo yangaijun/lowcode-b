@@ -1,0 +1,88 @@
+@import 'styles/vars.less';
+
+.title {
+    font-weight: 700;
+    position: sticky;
+    top: 32px;
+    background-color: white;
+    z-index: 20;
+}
+.main {
+    padding-right: 12px;
+
+    .searchDiv {
+        padding: 12px;
+        padding-bottom: 2px;
+        width: calc(100% - 16px);
+        background-color: white;
+        position: sticky;
+        top: 0;
+
+        .search {
+            width: 100%;
+        }
+    }
+
+
+    ul {
+        padding-inline-start: 18px;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    li {
+        font-weight: 700;
+        margin-top: 5px;
+    }
+
+    li li {
+        font-weight: 500;
+        margin-left: 0px;
+        cursor: pointer;
+        transition: color .6s;
+
+        &:hover {
+            color: @primary;
+        }
+    }
+
+    .des {
+        color: @placeholder;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .detail {
+        padding: 0 10px;
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            cursor: pointer;
+            font-weight: 700;
+            padding: 5px 0;
+            transition: color .6s;
+            background-color: white;
+
+            &:hover {
+                color: @primary;
+            }
+        }
+
+        .content {
+            padding-left: 8px;
+
+            ul li {
+                list-style: circle;
+                font-weight: normal;
+            }
+
+            li {
+                margin-top: 5px;
+            }
+        }
+    }
+}

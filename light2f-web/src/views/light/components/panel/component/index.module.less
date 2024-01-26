@@ -1,0 +1,102 @@
+@import 'styles/vars.less';
+
+.left-body {
+    min-width: 280px;
+    padding: 0px 0 15px 0px;
+    margin-left: -8px;
+    margin-top: -8px;
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+
+    .messageAndConfirm {
+        padding: 2px;
+        padding-left: 15px;
+    }
+
+    .alert {
+        width: 273px;
+        margin-left: 2px;
+    }
+
+    &::-webkit-scrollbar { 
+        width: 0px;
+    }
+
+    svg {
+        margin-left: 2px;
+        color: #555;
+
+        &:hover {
+            color: rgb(64, 169, 255);
+        }
+    }
+
+    .item {
+        color: #313131;
+        height: 26px;
+        width: 118px;
+        padding-top: 2px;
+        border-radius: 4px;
+        font-weight: 400;
+        text-align: center;
+        margin: 0 5px 5px 0;
+        display: inline-block;
+        justify-content: center;
+        color: #aaa;
+        border: 1px solid #ddd;
+        position: relative;
+
+        &:hover {
+            background-color: #f6f7ff;
+            cursor: move;
+        }
+
+        .hasNew {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            height: 8px;
+            width: 8px;
+            background-color: @error;
+            border-radius: 50%;
+        }
+
+        .cmpDoc {
+            position: absolute;
+            border-radius: 4px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            background-color: white;
+            opacity: 0;
+            font-size: 10px;
+            transition: opacity .3s;
+            padding-top: 3px;
+            cursor: move;
+        }
+
+        .cmpDocShow {
+            cursor: pointer;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .add {
+        color: @primary;
+        border-color: @border;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #f6f7ff; 
+        }
+    }
+
+    .custom-item {
+        background-color: #fafafa;
+    }
+}

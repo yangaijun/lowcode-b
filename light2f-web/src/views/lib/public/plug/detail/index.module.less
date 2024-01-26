@@ -1,0 +1,97 @@
+@import 'styles/vars.less';
+
+.main {
+    .line {
+        margin-top: 12px;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 24px;
+        color: #393939;
+        display: flex;
+        align-items: flex-end;
+
+        .v {
+            font-size: 12px;
+            color: @placeholder;
+            margin-left: 12px;
+
+            .select {
+                width: 220px;
+            }
+        }
+    }
+
+    .header {
+        display: flex;
+        .name {
+            flex: 1;
+            color: #494949;
+            font-size: 22px;
+            display: flex;
+            font-weight: 600;
+            align-items: flex-end;
+
+            .vconfig {
+                font-size: 14px;
+                font-weight: 400;
+                margin-left: 2px;
+            }
+
+            .type {
+                margin-left: 12px;
+                font-weight: 400;
+            }
+        }
+
+    }
+
+    .tags {
+        margin-bottom: 16px;
+    }
+
+    .docTitle {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .docContent {
+        margin-bottom: 18px;
+    }
+
+    .libs {
+        ul {
+            padding-inline-start: 0px !important;
+            margin-block-end: 0px !important;
+        }
+
+        ul li {
+            list-style: none;
+            padding: 3px 0px;
+        }
+    }
+
+    .testTitle {
+        margin-top: 12px;
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 16px;
+
+        .view {
+            font-size: 14px;
+            font-weight: 400;
+            margin-left: 12px;
+        }
+    }
+
+    .testDes {
+        color: @placeholder;
+    }
+
+    .card {
+        margin-bottom: 22px;
+        margin-top: 5px;
+    }
+}

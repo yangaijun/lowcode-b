@@ -1,0 +1,112 @@
+@import 'styles/vars.less';
+
+.main {
+    margin-top: 12px;
+
+    .alert {
+        margin-left: 2px;
+        margin-bottom: 8px;
+    }
+
+    .region {
+        margin-bottom: 22px;
+        display: flex;
+        align-items: center;
+    }
+
+    ul li {
+        list-style: none;
+
+        .line {
+            margin: 16px 0;
+        }
+
+        .item {
+            display: flex;
+
+            .content {
+                flex: 1;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .header {
+                    margin-left: -2px;
+                    padding-left: 1px;
+                    display: flex;
+
+                    .name {
+                        color: #414141;
+                        font-size: 15px;
+                        margin-right: 18px;
+                        transition: opacity .3s linear;
+                    }
+                    .type {
+                        flex: 1;
+                        display: flex;
+                        margin-top: 5px;
+                        justify-content: flex-end;
+                    }
+                }
+
+                .tags {
+                    margin-top: 22px;
+                    margin-bottom: 16px;
+                }
+
+                .user {
+                    display: flex;
+                    align-items: center;
+                    margin: 8px 0;
+                    margin-left: -1px;
+
+                    .avatar {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                        border: 1px solid @placeholder;
+                    }
+
+                    .uname {
+                        color: @placeholder;
+                        color: @primary;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .fns {
+                    color: rgba(0, 0, 0, .65);
+                    display: flex;
+
+                    .fn {
+                        display: flex;
+                        font-size: 14px;
+                        align-items: center;
+
+                        svg {
+                            margin-right: 8px;
+                        }
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .footer {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+}

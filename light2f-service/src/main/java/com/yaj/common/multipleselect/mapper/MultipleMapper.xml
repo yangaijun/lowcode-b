@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yaj.common.multipleselect.mapper.MultipleMapper">
+    <select id="countMulSelect" parameterType="com.yaj.common.multipleselect.MultipleSelect" resultType="integer">
+       select distinct count(*) from ${masterTable}  
+       <if test="join!=null">
+       		<foreach collection="join" index="index" item="item" separator=" " >
+       			left join ${item}
+       		</foreach>
+       </if> 
+       <where>
+       		${sqlSegment}
+       </where> 
+    </select>
+    
+    <select id="mulSelect" parameterType="com.yaj.common.multipleselect.MultipleSelect" resultType="map">
+       select distinct ${columns} from ${masterTable}  
+       <if test="join!=null">
+       		<foreach collection="join" index="index" item="item" separator=" " >
+       			left join ${item}
+       		</foreach>
+       </if>
+       <where>
+       		${sqlSegment}
+       </where>
+       <if test="groupBy!=null and groupBy!=''">
+       		group by ${groupBy}
+       </if>
+       <if test="orderBy!=null and orderBy!=''">
+       		order by ${orderBy}
+       </if>
+       <if test="start != null and end != null">
+           limit #{start}, #{end}
+       </if>
+    </select>
+</mapper>

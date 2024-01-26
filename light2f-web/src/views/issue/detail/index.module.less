@@ -1,0 +1,76 @@
+.main {
+    .header {
+        display: flex;
+        .avatar {
+            width: 68px;
+            display: flex;
+            align-items: center;
+            img {
+                width: 58px;
+                height: 58px;
+                border-radius: 50%;
+            }
+        }
+        .title {
+            flex: 1;
+            font-size: 26px;
+            font-weight: bold;
+        }
+        .user {
+            display: flex;
+            .name {
+                margin-right: 12px;
+            }
+        }
+    } 
+    .commentTitle {
+        margin-top: 45px;
+        font-size: 18px;
+        margin-bottom: -14px;
+    }
+    ul li {
+        list-style: none;
+        ul li {
+            margin-left: 15px;
+        }
+        .comment {
+            display: flex;
+            .avatar {
+                width: 58px;
+                display: flex;
+                img {
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 50%;
+                }
+            }
+            .info {
+                flex: 1;
+                .user {
+                    display: flex;
+                    margin-bottom: 10px;
+                    .name {
+                        margin-right: 12px;
+                    }
+                }
+            }
+            .end {
+                width: 120px;
+                display: flex;
+                justify-content: flex-end;
+                .like {
+                    color: rgb(24, 144, 255);
+                }
+            }
+        }
+        
+    }
+    .footer {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .form {
+        margin-top: 40px;
+    }
+}

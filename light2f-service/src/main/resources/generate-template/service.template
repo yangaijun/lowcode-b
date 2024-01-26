@@ -1,0 +1,22 @@
+package com.yaj.${moduleName}.business.${packageName}.service;
+
+import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+
+import com.yaj.${moduleName}.business.${packageName}.entity.po.${entityPrefix}PO;
+import com.yaj.${moduleName}.business.${packageName}.mapper.${entityPrefix}Mapper;
+
+<% var date = date(); %>
+/*
+ * @Description: ${tableComment}
+ * @date: ${ date , dateFormat="yyyy-MM-dd"}
+ */
+@Service
+public class ${entityPrefix}Service extends ServiceImpl<${entityPrefix}Mapper, ${entityPrefix}PO> {
+
+    @Resource
+    ${entityPrefix}Mapper ${objectPrefix}Mapper;
+
+}

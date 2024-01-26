@@ -1,0 +1,85 @@
+@import 'styles/vars.less';
+
+.main { 
+    padding-top: 18px;
+    
+    .region {
+        margin-left: 40px;
+        margin-bottom: 28px;
+
+        .search {
+            width: 58%;
+            margin-left: 18px;
+        }
+    }
+
+    ul li {
+        list-style: none;
+
+        .line {
+            margin: 16px 0;
+        }
+
+        .content {
+            display: flex;
+
+            .avatar {
+                width: 68px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 52px;
+                    height: 52px;
+                    border-radius: 50%;
+                }
+            }
+
+            .info {
+                flex: 1;
+
+                .issueTitle {
+                    font-size: 15px;
+                    color: #313131;
+                    transition: opacity .3 linear;
+                    margin-left: 14px; 
+                    padding-right: 200px;
+                    &:hover {
+                        opacity: .6;
+                    }
+                }
+
+                .user {
+                    display: flex;
+                    color: #888;
+                    margin-left: 16px;
+
+                    .name {
+                        margin-right: 8px;
+                    }
+                }
+            }
+
+            .end {
+                width: 120px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+        }
+    }
+
+    .footer {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .empty {
+        margin: 16px 0;
+        margin-left: 40px;
+        color: @info
+    }
+}

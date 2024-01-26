@@ -1,0 +1,48 @@
+.page-body {
+    width: 272px; 
+    .page-body-header {
+        display: flex;
+        .page-body-header-pn {
+            font-weight: 600;
+            color: #444;
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+    .page-drag {
+        white-space:nowrap;
+        overflow-y: auto;
+        overflow-x: auto;
+        height: calc(100vh - 156px);
+        padding-top: 8px;
+    }
+    .page-login {
+        height: 24px;
+        margin-left: 24px;
+        padding-left: 4px;
+        padding-top: 1px;
+        
+        border-radius: 1px;
+        color: #232323;
+        font-weight: 600;
+        margin-bottom: 4px;
+        &-selected {
+            background-color: rgb(186, 231, 255);
+        }
+        &:hover {
+            cursor: pointer;
+
+        }
+    }
+    .draggable-tree {
+        .ant-tree-node-content-wrapper-close {
+            font-weight: bold;
+            color: #555;
+        }
+        .ant-tree-node-content-wrapper-open  {
+            font-weight: bold;
+            color: #555;
+        } 
+    }
+}

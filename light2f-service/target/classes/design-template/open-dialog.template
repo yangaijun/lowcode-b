@@ -1,0 +1,3 @@
+function(params) {
+    $open('dialog', ${params}<% if (row != null) print(", " + row); %>)
+}

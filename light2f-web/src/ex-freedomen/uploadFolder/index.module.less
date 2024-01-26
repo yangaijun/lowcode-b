@@ -1,0 +1,53 @@
+@import 'styles/vars.less';
+
+.main {
+    border: 1px dashed #ccc;
+    
+    .label {
+        width: 100%;
+        height: 122px;
+        position: relative;
+        background-color: rgb(250, 250, 250);
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .info {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .title {
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+
+            .tip {
+                color: @placeholder
+            }
+        }
+
+        .fileInput {
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+}
+
+.hborder {
+    cursor: pointer;
+
+    &:hover {
+        border: 1px dashed @primary;
+    }
+}
+
+.disabled {
+    cursor: not-allowed;
+}

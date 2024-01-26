@@ -1,0 +1,146 @@
+import React, { Component } from 'react';
+import { ${imports} } from 'antd-freedomen'
+
+export default class extends Component {
+    state = {
+		<%
+			for (var i = 0; i < states.~size; i ++) {
+			    var state = states[i];
+				print(state.key + ": " + state.value);
+				if (i != states.~size - 1) {
+					print(",\n");
+				} else {
+					println();
+				}
+			}
+		%>
+    }
+	<%
+		if (forms.~size != 0) {
+			println ("getForm = (formData = {}) => {");
+			println ("return <Form");
+			println ("data={formData}");
+			println ("ref={ref => this.form = ref}");
+			println ("key={(new Date()).valueOf()}");
+			println ("submit={data => {");
+			println ("Dialog.close('dialog')");
+			println ("}}");
+			println ("columns={[");
+			for (var i = 0; i < forms.~size; i ++) {
+				var form = forms[i];
+				print(form);
+				if (i != forms.~size - 1) {
+					print(",\n");
+				} else {
+					println();
+				}
+			}
+			println ("]}");
+			println ("/>");
+			println ("}");
+		}
+	%> 
+	<%
+		if (searchs.~size != 0) {
+			println ("searchEvent = (params) => {");
+			println ("if (params.prop === 'search') {");
+			println ("}");
+			println ("}"); 
+		}
+	%> 
+	<%
+		if (useCreate) {
+			println ("regionEvent = (params) => {");
+			println ("if (params.prop == 'create') {");
+			println ("Dialog.open('dialog', { title: '添加" + title + "' }).then(setBody => setBody(this.getForm()))");
+			println ("}"); 
+			println ("}"); 
+		}
+	%>
+	<%
+		if (useEdit) {
+			println ("tableEvent = (params) => {");
+			println ("if (params.prop == 'edit') {");
+			println ("Dialog.open('dialog', { title: '编辑" + title + "' }).then(setBody => setBody(this.getForm(params.row)))");
+			println ("}"); 
+			println ("}"); 
+		}
+	%>
+	render () {
+		<%
+			if (states.~size != 0) {
+				print("const { ");
+				for (var i = 0; i < states.~size; i ++) {
+				    var state = states[i];
+					print(state.key);
+					if (i != states.~size - 1) {
+						print(",");
+					}
+				}
+				println(" } = this.state");
+			}
+		%>
+		return (<>
+			<%
+				if (useEdit || useCreate) {
+					println("<Dialog name='dialog' form={_ => this.form} />");
+				}
+				
+				if (searchs.~size != 0) {
+					println("<Search");
+					println("event={this.searchEvent}");
+					println("columns={[");
+					for (var i = 0; i < searchs.~size; i ++) {
+						var search = searchs[i];
+						println(search + ",");
+					}
+					println("{ type: 'button-primary', value: '查询', prop: 'search' },");
+					println("{ type: 'button', value: '重置', prop: '$reset'}");
+					println("]}");
+					println("/>"); 
+				}
+				
+				if (useCreate) {
+					println("<Region");
+					println("event={this.regionEvent}");
+					println("columns={[");
+					println("{ type: 'button-primary', value: '添加', prop: 'create' }");
+					println("]}");
+					println("/>");
+				}
+				
+				if (tables.~size != 0) {
+					println("<Table");
+					println("data={tableData}");
+					println("pagination={pagination}");
+					println("event={this.tableEvent}");
+					println("columns={[");
+					for (var i = 0; i < tables.~size; i ++) {
+						var table = tables[i];
+						print(table);
+						if (i != tables.~size - 1) {
+							print(",\n");
+						} 
+					}
+					if (useEdit || useDelete) {
+						print(",\n");
+						println("{ label: '操作', width: 200, render() {");
+						println("return [");
+						if (useEdit) {
+							println("{ type: 'button-primary@small', value: '编辑', prop: 'edit' },");
+						}
+						if (useDelete) {
+							println("{ type: 'button@small', value: '删除', prop: 'delete' },");
+						}
+						println("{ type: 'space' }");
+						println("]");
+						println("}");
+						println("}");
+					}
+					println("]}");
+					println("/>");  
+				}
+			%>
+		</>) 
+	} 
+}

@@ -1,0 +1,93 @@
+###################  服务器配置  ###################
+server:
+  port: 8100
+  context-path: /lightApi/
+  tomcat:
+    basedir: /tmp/l2f
+
+base:
+  env: prod
+  swagger-open: false
+  noAuthPath:
+    - /User/login
+    - /User/email
+    - /User/register
+    - /User/select
+    - /User/guestToken
+    - /User/refreshToken
+    - /User/forget
+    - /User/count
+  generate: false
+###################  日志配置  ###################
+log:
+  path: /data/logs/light2f
+  level: info
+  fileName: light2f
+###################  mybatis-plus配置  ###################
+mybatis-plus:
+  mapper-locations: classpath*:com/yaj/freedomen/business/*/mapper/*.xml
+  typeAliasesPackage: com.yaj.freedomen.business.*.entity.po
+  global-config:
+    id-type: 0  #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
+    db-column-underline: false
+    refresh-mapper: true
+    #逻辑删除配置
+    logic-delete-value: 1
+    logic-not-delete-value: 0
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true #配置的缓存的全局开关
+    lazyLoadingEnabled: true #延时加载的开关
+    multipleResultSetsEnabled: true #开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+
+###################  spring 配置     ###################
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+  mail:
+    host: smtp.163.com # 配置 smtp 服务器地址
+    port: 25 # smtp 服务器的端口
+    username: light2f@163.com # 配置邮箱用户名(你的邮箱地址)
+    password: 123456 # 配置申请到的授权码(刚让复制的授权码)
+    default-encoding: UTF-8 # 配置邮件编码
+    properties:
+    mail:
+      smtp:
+        socketFactoryClass: javax.net.ssl.SSLSocketFactory # 配饰 SSL 加密工厂
+        debug: true
+    from: light2f@163.com #发送方邮件，配在yml中可方便更改
+  datasource:
+    url: jdbc:mysql://localhost:3306/prod_l2f?useUnicode=true&characterEncoding=utf8&useSSL=false&rewriteBatchedStatements=true
+    username: light2f
+    password: 123456
+    filters: log4j,wall,mergeStat
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+  aop:
+    proxy-target-class: true
+  mvc:
+    #      static-path-pattern: /static/**
+    view:
+      prefix: /WEB-INF/view
+  http:
+    multipart:
+      location: /data/l2f
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+###################  beetl配置  ###################
+beetl:
+  delimiter-statement-start: \@   #开始结束标签(yaml不允许@开头)
+  delimiter-statement-end: null
+  #  resource-tagroot: common/tags   #自定义标签文件Root目录和后缀
+  #  resource-tagsuffix: tag
+  resource-auto-check: false #是否检测文件变化,开发用true合适，但线上要改为false
+
+################### 模板配置  ###################
+template:
+  filePath: /application/project #文件路徑
+  fileName: project-template #文件名
